@@ -4,22 +4,27 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>RPS</title>
+		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
-		<h1>Rock, paper, scissors</h1>
-		<div>
-			<h2>SCORE</h2>
-			<p>User: <span id="playerScoreCounter">0</span></p>
-			<p>Computer: <span id="computerScoreCounter">0</span></p>
-			<p>Ties: <span id="tiesCounter">0</span></p>
-		</div>
-		<div>
-			<button value="rock" class="btn">Rock 🪨</button>
-			<button value="paper" class="btn">Paper 📄</button>
-			<button value="scissors" class="btn">Scissors ✂️</button>
-		</div>
+		<main>
+			<h1 class="heading">Rock, paper, scissors</h1>
+			<div class="scores">
+				<h2>SCORE</h2>
+				<div class="score-counters">
+					<p>User: <span id="playerScoreCounter">0</span></p>
+					<p>Computer: <span id="computerScoreCounter">0</span></p>
+					<p>Ties: <span id="tiesCounter">0</span></p>
+				</div>
+			</div>
+			<div class="buttons">
+				<button value="rock" class="btn">Rock 🪨</button>
+				<button value="paper" class="btn">Paper 📄</button>
+				<button value="scissors" class="btn">Scissors ✂️</button>
+			</div>
 
-		<h3 id="result-text"></h3>
+			<h3 id="result-text"></h3>
+		</main>
 		<script src="app.js"></script>
 	</body>
 </html>
