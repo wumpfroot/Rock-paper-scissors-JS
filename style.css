@@ -46,6 +46,7 @@ main {
 	border-radius: 0.5rem;
 	padding: 1rem;
 	min-width: 50vw;
+	filter: drop-shadow(5px 4px 10px #000000);
 }
 
 .heading {
