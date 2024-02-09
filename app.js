@@ -9,8 +9,6 @@ let playerScore = 0;
 let computerScore = 0;
 let ties = 0;
 
-const computerOptions = ["rock", "paper", "scissors"];
-
 playerOptions.forEach((option) =>
 	//read the value in button and save it to playerchoice variable
 	//then launch the game
@@ -27,9 +25,21 @@ function updateScores() {
 	tiesCounter.textContent = ties;
 }
 
-const game = () => {
-	//computers random choice
-	const computerChoice = computerOptions[Math.floor(Math.random() * 3)];
+//get computers choice using a promise. Waits 500 milliseconds to make a choice
+const computerOptions = ["rock", "paper", "scissors"];
+const getRandomComputerChoice = () => {
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			const randomChoice = computerOptions[Math.floor(Math.random() * 3)];
+			resolve(randomChoice);
+			reject("Something went wrong here!");
+		}, 500);
+	});
+};
+
+const game = async () => {
+	//call computers random choice in an async function
+	const computerChoice = await getRandomComputerChoice();
 
 	const computerWinConditions = {
 		rock: "scissors",
@@ -37,8 +47,8 @@ const game = () => {
 		scissors: "paper",
 	};
 
-	// checks the playerWinConditions for matches. If there is a match, player wins.
-	//If not, computer wins.
+	// checks the computerWinConditions for matches. If there is a match, computer wins.
+	//If not, player wins.
 	if (playerChoice === computerChoice) {
 		resultText.textContent = "It is a tie!";
 		ties++;
