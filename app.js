@@ -1,10 +1,13 @@
 const computerScoreCounter = document.getElementById("computerScoreCounter");
 const playerScoreCounter = document.getElementById("playerScoreCounter");
+const tiesCounter = document.getElementById("tiesCounter");
 const resultText = document.getElementById("result-text");
 const playerOptions = document.querySelectorAll("button");
+
 let playerChoice;
 let playerScore = 0;
 let computerScore = 0;
+let ties = 0;
 
 const computerOptions = ["rock", "paper", "scissors"];
 
@@ -21,6 +24,7 @@ function updateScores() {
 	// Update the score counters in the HTML
 	playerScoreCounter.textContent = playerScore;
 	computerScoreCounter.textContent = computerScore;
+	tiesCounter.textContent = ties;
 }
 
 const game = () => {
@@ -37,6 +41,7 @@ const game = () => {
 	//If not, computer wins.
 	if (playerChoice === computerChoice) {
 		resultText.textContent = "It is a tie!";
+		ties++;
 	} else if (playerChoice !== computerWinConditions[computerChoice]) {
 		console.log(computerWinConditions[computerChoice]);
 		resultText.textContent = `You chose ${playerChoice}. Computer chose ${computerChoice}. You win!`;
