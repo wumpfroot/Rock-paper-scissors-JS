@@ -1,5 +1,10 @@
 # Rock, paper, scissors
 
+Classic game where you go against the computer, with rock, paper or scissors.
+* Rock beats scissors
+* Paper beats rock
+* Scissors beats paper
+
 
 <h3 align="left">Languages and Tools:</h3>
 
